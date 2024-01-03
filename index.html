@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CKAN Redirect</title>
+	<style>
+		body {
+			font-style: system-ui, sans-serif;
+			font-weight: 700;
+			margin-top: 20px;
+			text-align: center;
+		}
+		#closeTabNotify {
+			font-weight: 300;
+			margin-top: 10px;
+		}
+		@media (prefers-color-scheme: dark) {
+			body {
+				background: #202020;
+				color: #eee;
+			}
+		}
+	</style>
+</head>
+<body>
+	Redirecting...
+	<div id="closeTabNotify"></div>
+</body>
+<script>
+	location.href = "ckan://" + decodeURIComponent(window.location.search.substr(1));
+	document.querySelector("#closeTabNotify").textContent = "You can now close this tab.";
+</script>
+</html>
